@@ -1,2 +1,8 @@
-node_modules
-.next
+#dependencies
+/node_modules
+
+#next.js
+/.next
+
+#env files
+/.env.local
