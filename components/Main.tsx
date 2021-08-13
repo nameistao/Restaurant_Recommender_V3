@@ -1,21 +1,19 @@
-import { gql, useQuery } from "@apollo/client";
+import styled from "styled-components";
 
-const SEARCH = gql`
-  {
-    search(location: "san francisco") {
-      total
-    }
-  }
+const StyledMain = styled.main`
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh 5vw 5vh 5vw;
+  background: #ffffff;
+  border-radius: 15px;
 `;
 
 const Main = () => {
-  const { data } = useQuery(SEARCH);
-  console.log(data);
   return (
-    <>
+    <StyledMain>
       <h1>Restaurant Recommender</h1>
       <button>find me a restaurant!</button>
-    </>
+    </StyledMain>
   );
 };
 
