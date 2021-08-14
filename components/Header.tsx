@@ -1,4 +1,7 @@
+import Image from "next/image";
 import styled from "styled-components";
+
+import ServeFood from "components/icons/ServeFood";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -11,14 +14,26 @@ const StyledHeader = styled.header`
 const StyledSection = styled.div`
   height: 100%;
   width: 50%;
-  background: grey;
+  color: #ffffff;
   border-radius: 15px;
+`;
+
+const StyledTitle = styled.div`
+  font-size: 26px;
+  text-align: center;
+  margin-top: 55px;
+  font-weight: bold;
 `;
 
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledSection>Restaurant Recommender</StyledSection>
+      <StyledSection>
+        <StyledTitle>
+          Restaurant <ServeFood height={40} width={40} fill={"#ffffff"} />{" "}
+          Recommender
+        </StyledTitle>
+      </StyledSection>
       <StyledSection>Button</StyledSection>
     </StyledHeader>
   );

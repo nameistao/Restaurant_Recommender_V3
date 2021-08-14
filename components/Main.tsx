@@ -6,12 +6,12 @@ const StyledMain = styled.main`
   width: 90vw;
   height: 90vh;
   margin: 5vh 5vw 5vh 5vw;
-  background: #ffffff;
+  background: #243447;
   border-radius: 15px;
 `;
 
 const StyledHR = styled.hr`
-  border: 3px solid #ff3c38;
+  border: 3px solid #db162f;
   border-radius: 15px;
   width: 90%;
 `;
