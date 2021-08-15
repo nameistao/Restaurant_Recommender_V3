@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "components/Header";
 import Slides from "components/Slides";
+import Details from "components/Details";
 
 const StyledMain = styled.main`
   width: 90vw;
@@ -11,9 +12,15 @@ const StyledMain = styled.main`
 `;
 
 const StyledHR = styled.hr`
-  border: 3px solid #db162f;
+  border: 3px solid #c51f5d;
   border-radius: 15px;
   width: 90%;
+`;
+
+const StyledCenterWrapper = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
 `;
 
 const Main = () => {
@@ -21,8 +28,11 @@ const Main = () => {
     <StyledMain>
       <Header />
       <StyledHR />
-      <Slides />
-      <button>find me a restaurant!</button>
+      <StyledCenterWrapper>
+        <Slides />
+        <Details />
+      </StyledCenterWrapper>
+      TODO: Travel Times, More Info, Directions
     </StyledMain>
   );
 };
