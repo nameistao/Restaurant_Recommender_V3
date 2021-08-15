@@ -16,25 +16,40 @@ const StyledSection = styled.div`
   width: 50%;
   color: #ffffff;
   border-radius: 15px;
+  display: flex;
 `;
 
 const StyledTitle = styled.div`
-  font-size: 26px;
+  font-size: 35px;
   text-align: center;
-  margin-top: 55px;
   font-weight: bold;
+  margin: auto;
+`;
+
+const StyledSearchButton = styled.button`
+  width: 85%;
+  border: none;
+  margin: auto;
+  background: #c51f5d;
+  text-align: center;
+  height: 60%;
+  border-radius: 15px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Header = () => {
   return (
     <StyledHeader>
       <StyledSection>
-        <StyledTitle>
-          Restaurant <ServeFood height={40} width={40} fill={"#ffffff"} />{" "}
-          Recommender
-        </StyledTitle>
+        <StyledTitle>Restaurant Recommender</StyledTitle>
       </StyledSection>
-      <StyledSection>Button</StyledSection>
+      <StyledSection>
+        <StyledSearchButton>
+          <ServeFood height={50} width={50} fill={"#ffffff"} />
+        </StyledSearchButton>
+      </StyledSection>
     </StyledHeader>
   );
 };
