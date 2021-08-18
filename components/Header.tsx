@@ -49,7 +49,7 @@ const Header = () => {
         lat = position.coords.latitude;
         long = position.coords.longitude;
 
-        const response = await axios.get(`http://localhost:3000/api/getData`, {
+        const response = await axios.get(`/api/getData`, {
           params: {
             lat: lat,
             long: long,
