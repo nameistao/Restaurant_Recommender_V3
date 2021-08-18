@@ -19,11 +19,16 @@ const StyledSection = styled.div`
   display: flex;
 `;
 
-const StyledTitle = styled.div`
+const StyledTitle = styled.h1`
   font-size: 35px;
   text-align: center;
   font-weight: bold;
   margin: auto;
+  border: 3px solid #c51f5d;
+  width: 85%;
+  height: 60%;
+  border-radius: 15px;
+  line-height: 2.4;
 `;
 
 const StyledSearchButton = styled.button`
