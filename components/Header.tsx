@@ -49,16 +49,12 @@ const Header = () => {
         lat = position.coords.latitude;
         long = position.coords.longitude;
 
-        const config = {
-          method: "get",
-          url: `http://localhost:3000/api/getData`,
+        const response = await axios.get(`http://localhost:3000/api/getData`, {
           params: {
             lat: lat,
             long: long,
           },
-        };
-
-        const response = await axios(config);
+        });
         console.log(response);
       });
     } else {
