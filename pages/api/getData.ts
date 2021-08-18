@@ -2,8 +2,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const lat = "37.767413217936834";
-  const long = "-122.42820739746094";
+  const lat = req.query.lat;
+  const long = req.query.long;
 
   const config = {
     method: "get",
@@ -15,7 +15,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const response = await axios(config);
 
-  const data = JSON.stringify(response.data);
+  const data = response.data;
 
   res.status(200).json({ data: data });
 };

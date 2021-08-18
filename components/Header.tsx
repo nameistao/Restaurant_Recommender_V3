@@ -1,4 +1,4 @@
-import Image from "next/image";
+import axios from "axios";
 import styled from "styled-components";
 
 import ServeFood from "components/icons/ServeFood";
@@ -40,13 +40,40 @@ const StyledSearchButton = styled.button`
 `;
 
 const Header = () => {
+  const searchHandler = async () => {
+    let lat;
+    let long;
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+
+        const config = {
+          method: "get",
+          url: `http://localhost:3000/api/getData`,
+          params: {
+            lat: lat,
+            long: long,
+          },
+        };
+
+        const response = await axios(config);
+        console.log(response);
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+      return;
+    }
+  };
+
   return (
     <StyledHeader>
       <StyledSection>
         <StyledTitle>Restaurant Recommender</StyledTitle>
       </StyledSection>
       <StyledSection>
-        <StyledSearchButton>
+        <StyledSearchButton onClick={searchHandler}>
           <ServeFood height={50} width={50} fill={"#ffffff"} />
         </StyledSearchButton>
       </StyledSection>
