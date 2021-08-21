@@ -28,6 +28,7 @@ const Main = () => {
     price: "",
     rating: 0,
     distance: 0,
+    url: "#",
   });
 
   return (
