@@ -7,12 +7,26 @@ const StyledDetails = styled.div`
   border-radius: 15px;
 `;
 
+const StyledLine = styled.div`
+  height: 20%;
+`;
+
 interface IProps {
-  title: string;
+  name: string;
+  status: boolean;
+  category: Array<any>;
+  phone: string;
 }
 
-const Details = ({ title }: IProps) => {
-  return <StyledDetails>Title: {title}</StyledDetails>;
+const Details = ({ name, status, category, phone }: IProps) => {
+  return (
+    <StyledDetails>
+      <StyledLine>Restaurant: {name}</StyledLine>
+      <StyledLine>Status: {status ? "Closed" : "Open"}</StyledLine>
+      <StyledLine>Category: {category[0].title}</StyledLine>
+      <StyledLine>Phone: {phone}</StyledLine>
+    </StyledDetails>
+  );
 };
 
 export default Details;

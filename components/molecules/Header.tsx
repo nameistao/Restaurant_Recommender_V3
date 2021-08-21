@@ -64,8 +64,14 @@ const Header = ({ setData }: IProps) => {
           },
         });
 
-        setData(response.data.data);
-        console.log(response);
+        response.data.data.business;
+
+        const select = response.data
+          ? Math.floor(Math.random() * response.data.data.businesses.length)
+          : 0;
+
+        setData(response.data.data.businesses[select]);
+        console.log(response.data.data.businesses[select]);
       });
     } else {
       alert("Geolocation is not supported by this browser.");

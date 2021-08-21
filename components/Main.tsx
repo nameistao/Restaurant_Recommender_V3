@@ -9,6 +9,7 @@ const StyledMain = styled.main`
   height: 95vh;
   margin: 2.5vh 2.5vw 2.5vh 2.5vw;
   border-radius: 15px;
+  color: #ffffff;
 `;
 
 const StyledContentWrapper = styled.div`

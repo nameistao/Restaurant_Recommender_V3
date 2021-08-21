@@ -21,24 +21,29 @@ const StyledWrapper = styled.div`
 
 interface IProps {
   data: {
-    businesses: Array<any>;
+    name: string;
+    is_closed: boolean;
+    display_phone: string;
+    categories: Array<any>;
   };
 }
 
 const Content = ({ data }: IProps) => {
-  const [title, setTitle] = useState("");
+  const [name, setName] = useState(data ? data.name : "");
+  const [status, setStatus] = useState(data ? data["is_closed"] : true);
+  const [category, setCategory] = useState(data ? data.categories : []);
+  const [phone, setPhone] = useState(data ? data["display_phone"] : "");
 
   useEffect(() => {
-    const select = data
-      ? Math.floor(Math.random() * data.businesses.length)
-      : 0;
-
-    data && setTitle(data.businesses[select].alias);
+    setName(data.name);
+    setStatus(data["is_closed"]);
+    setCategory(data.categories);
+    setPhone(data["display_phone"]);
   }, [data]);
 
   return (
     <StyledContent>
-      <Details title={title} />
+      <Details name={name} status={status} category={category} phone={phone} />
       <StyledWrapper>
         <Price />
         <Rating />
