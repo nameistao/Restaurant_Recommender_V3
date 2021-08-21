@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "components/Header";
 import Slides from "components/Slides";
-import Content from 'components/Content';
+import Content from "components/Content";
 
 const StyledMain = styled.main`
   width: 95vw;
@@ -19,14 +19,14 @@ const StyledContentWrapper = styled.div`
 `;
 
 const Main = () => {
-  const [data, setData] = useState('');
+  const [data, setData] = useState("");
 
   return (
     <StyledMain>
-      <Header setData={setData}/>
+      <Header setData={setData} />
       <StyledContentWrapper>
-        <Content data={data}/>
-        <Slides/>
+        <Content data={data} />
+        <Slides />
       </StyledContentWrapper>
     </StyledMain>
   );
