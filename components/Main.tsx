@@ -4,24 +4,19 @@ import styled from "styled-components";
 import Header from "components/Header";
 import Slides from "components/Slides";
 import Details from "components/Details";
+import Content from 'components/Content';
 
 const StyledMain = styled.main`
-  width: 90vw;
-  height: 90vh;
-  margin: 5vh 5vw 5vh 5vw;
-  background: #243447;
+  width: 95vw;
+  height: 95vh;
+  margin: 2.5vh 2.5vw 2.5vh 2.5vw;
   border-radius: 15px;
 `;
 
-const StyledHR = styled.hr`
-  border: 3px solid #c51f5d;
-  border-radius: 15px;
-  width: 90%;
-`;
-
-const StyledCenterWrapper = styled.div`
+const StyledContentWrapper = styled.div`
   width: 100%;
-  height: 50%;
+  height: calc(80% - 2.5vh);
+  margin-top: 2.5vh;
   display: flex;
 `;
 
@@ -29,12 +24,10 @@ const Main = () => {
   return (
     <StyledMain>
       <Header />
-      <StyledHR />
-      <StyledCenterWrapper>
-        <Slides />
-        <Details />
-      </StyledCenterWrapper>
-      TODO: Travel Times, More Info, Directions
+      <StyledContentWrapper>
+        <Content/>
+        <Slides/>
+      </StyledContentWrapper>
     </StyledMain>
   );
 };

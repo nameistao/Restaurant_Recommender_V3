@@ -1,13 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledSlides = styled.div`
-  width: 50%;
-  height: 100%;
-  color: #ffffff;
-`;
+const StyledRightWrapper = styled.div`
+    width: calc(42.5% - 2.5vw);
+    margin-left: 2.5vw;
+    height: 100%;
+    background: #243447;
+    border-radius: 15px;
+`
 
 const Slides = () => {
-  return <StyledSlides>TODO: Slides Section</StyledSlides>;
-};
+    return <StyledRightWrapper></StyledRightWrapper>
+}
 
 export default Slides;
