@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import Header from "components/Header";
-import Slides from "components/Slides";
-import Content from "components/Content";
+import Header from "components/molecules/Header";
+import Slides from "components/atoms/Slides";
+import Content from "components/molecules/Content";
 
 const StyledMain = styled.main`
   width: 95vw;

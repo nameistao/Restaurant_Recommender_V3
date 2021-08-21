@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import Details from "components/Details";
-import Price from "components/Price";
-import Rating from "components/Rating";
-import TravelTimes from "components/TravelTimes";
+import Details from "components/atoms/Details";
+import Price from "components/atoms/Price";
+import Rating from "components/atoms/Rating";
+import TravelTimes from "components/atoms/TravelTimes";
+import MoreInfo from "components/atoms/MoreInfo";
+import Directions from "components/atoms/Directions";
 
 const StyledContent = styled.div`
   width: 57.5%;
@@ -44,7 +46,10 @@ const Content = ({ data }: IProps) => {
       <StyledWrapper>
         <TravelTimes />
       </StyledWrapper>
-      <StyledWrapper>Info and Dir</StyledWrapper>
+      <StyledWrapper>
+        <MoreInfo />
+        <Directions />
+      </StyledWrapper>
     </StyledContent>
   );
 };

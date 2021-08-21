@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
 
 const StyledTitleWrapper = styled.div`
   text-align: center;
-  border: 3px solid #c51f5d;;
+  border: 3px solid #c51f5d;
   width: 57.5%;
   height: 100%;
   border-radius: 15px;
@@ -28,7 +28,7 @@ const StyledTitle = styled.h1`
   font-weight: bold;
   color: #ffffff;
   width: 100%;
-`
+`;
 
 const StyledSearchButton = styled.button`
   margin-left: 2.5vw;
@@ -44,10 +44,10 @@ const StyledSearchButton = styled.button`
 `;
 
 interface IProps {
-  setData: Function
+  setData: Function;
 }
 
-const Header = ({setData}: IProps) => {
+const Header = ({ setData }: IProps) => {
   const searchHandler = async () => {
     let lat;
     let long;
@@ -64,7 +64,7 @@ const Header = ({setData}: IProps) => {
           },
         });
 
-        setData(response.data.data)
+        setData(response.data.data);
         console.log(response);
       });
     } else {
@@ -75,14 +75,13 @@ const Header = ({setData}: IProps) => {
 
   return (
     <StyledHeader>
+      <StyledTitleWrapper>
+        <StyledTitle>Restaurant Recommender</StyledTitle>
+      </StyledTitleWrapper>
 
-        <StyledTitleWrapper><StyledTitle>Restaurant Recommender</StyledTitle></StyledTitleWrapper>
-
-
-        <StyledSearchButton onClick={searchHandler}>
-          <ServeFood height={50} width={50} fill={"#ffffff"} />
-        </StyledSearchButton>
-
+      <StyledSearchButton onClick={searchHandler}>
+        <ServeFood height={50} width={50} fill={"#ffffff"} />
+      </StyledSearchButton>
     </StyledHeader>
   );
 };
