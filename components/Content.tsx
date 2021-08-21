@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import styled from 'styled-components';
 
 const StyledContent = styled.div`
@@ -7,9 +8,19 @@ const StyledContent = styled.div`
     border-radius: 15px;
 `
 
-const Content = () => {
+interface IProps {
+    data: Array<any>
+}
+
+const Content = ({data}: IProps) => {
+    const [title, setTitle] = useState('');
+
+    useEffect(()=> {
+        setTitle(data.businesses[0].alias);
+    }, [data])
+
     return <StyledContent>
-        
+        <h2>title: {title}</h2>
     </StyledContent>
 }
 

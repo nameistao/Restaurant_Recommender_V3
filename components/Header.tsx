@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
 
 const StyledTitleWrapper = styled.div`
   text-align: center;
-  border: 3px solid #c51f5d;
+  border: 3px solid #c51f5d;;
   width: 57.5%;
   height: 100%;
   border-radius: 15px;
@@ -43,7 +43,11 @@ const StyledSearchButton = styled.button`
   }
 `;
 
-const Header = () => {
+interface IProps {
+  setData: Function
+}
+
+const Header = ({setData}: IProps) => {
   const searchHandler = async () => {
     let lat;
     let long;
@@ -59,6 +63,8 @@ const Header = () => {
             long: long,
           },
         });
+
+        setData(response.data.data)
         console.log(response);
       });
     } else {

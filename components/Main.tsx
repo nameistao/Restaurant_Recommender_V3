@@ -1,9 +1,7 @@
-import axios from "axios";
-
+import { useState, useEffect } from 'react'
 import styled from "styled-components";
 import Header from "components/Header";
 import Slides from "components/Slides";
-import Details from "components/Details";
 import Content from 'components/Content';
 
 const StyledMain = styled.main`
@@ -21,11 +19,13 @@ const StyledContentWrapper = styled.div`
 `;
 
 const Main = () => {
+  const [data, setData] = useState('');
+
   return (
     <StyledMain>
-      <Header />
+      <Header setData={setData}/>
       <StyledContentWrapper>
-        <Content/>
+        <Content data={data}/>
         <Slides/>
       </StyledContentWrapper>
     </StyledMain>
