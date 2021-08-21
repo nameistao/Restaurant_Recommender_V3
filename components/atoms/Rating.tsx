@@ -8,8 +8,12 @@ const StyledRating = styled.div`
   border-radius: 15px;
 `;
 
-const Rating = () => {
-  return <StyledRating>rating</StyledRating>;
+interface IProps {
+  rating: number;
+}
+
+const Rating = ({ rating }: IProps) => {
+  return <StyledRating>{rating}</StyledRating>;
 };
 
 export default Rating;

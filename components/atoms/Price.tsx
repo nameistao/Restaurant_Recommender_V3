@@ -7,8 +7,12 @@ const StyledPrice = styled.div`
   border-radius: 15px;
 `;
 
-const Price = () => {
-  return <StyledPrice>price</StyledPrice>;
+interface IProps {
+  price: string;
+}
+
+const Price = ({ price }: IProps) => {
+  return <StyledPrice>{price}</StyledPrice>;
 };
 
 export default Price;

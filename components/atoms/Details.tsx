@@ -23,7 +23,9 @@ const Details = ({ name, status, category, phone }: IProps) => {
     <StyledDetails>
       <StyledLine>Restaurant: {name}</StyledLine>
       <StyledLine>Status: {status ? "Closed" : "Open"}</StyledLine>
-      <StyledLine>Category: {category[0].title}</StyledLine>
+      <StyledLine>
+        Category: {typeof category === "undefined" ? "" : category[0]?.title}
+      </StyledLine>
       <StyledLine>Phone: {phone}</StyledLine>
     </StyledDetails>
   );

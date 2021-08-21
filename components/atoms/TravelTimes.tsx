@@ -20,12 +20,18 @@ const StyledCar = styled.div`
   margin-left: 2.5vw;
 `;
 
-const TravelTimes = () => {
+interface IProps {
+  distance: number;
+}
+
+const TravelTimes = ({ distance }: IProps) => {
   return (
     <>
-      <StyledWalk>walk</StyledWalk>
-      <StyledBike>bike</StyledBike>
-      <StyledCar>car</StyledCar>
+      <StyledWalk>
+        walk {Math.max(1, Math.round((distance / 1000) * 12))}
+      </StyledWalk>
+      <StyledBike>bike {Math.max(1, Math.round(distance / 200))}</StyledBike>
+      <StyledCar>car {Math.max(1, Math.round(distance / 400))}</StyledCar>
     </>
   );
 };

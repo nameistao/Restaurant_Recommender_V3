@@ -25,6 +25,9 @@ interface IProps {
     is_closed: boolean;
     display_phone: string;
     categories: Array<any>;
+    price: string;
+    rating: number;
+    distance: number;
   };
 }
 
@@ -33,23 +36,29 @@ const Content = ({ data }: IProps) => {
   const [status, setStatus] = useState(data ? data["is_closed"] : true);
   const [category, setCategory] = useState(data ? data.categories : []);
   const [phone, setPhone] = useState(data ? data["display_phone"] : "");
+  const [price, setPrice] = useState(data ? data.price : "");
+  const [rating, setRating] = useState(data ? data.rating : 0);
+  const [distance, setDistance] = useState(data ? data.distance : 0);
 
   useEffect(() => {
     setName(data.name);
     setStatus(data["is_closed"]);
     setCategory(data.categories);
     setPhone(data["display_phone"]);
+    setPrice(data.price);
+    setRating(data.rating);
+    setDistance(data.distance);
   }, [data]);
 
   return (
     <StyledContent>
       <Details name={name} status={status} category={category} phone={phone} />
       <StyledWrapper>
-        <Price />
-        <Rating />
+        <Price price={price} />
+        <Rating rating={rating} />
       </StyledWrapper>
       <StyledWrapper>
-        <TravelTimes />
+        <TravelTimes distance={distance} />
       </StyledWrapper>
       <StyledWrapper>
         <MoreInfo />
