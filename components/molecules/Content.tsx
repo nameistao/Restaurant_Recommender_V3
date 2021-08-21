@@ -28,6 +28,7 @@ interface IProps {
     price: string;
     rating: number;
     distance: number;
+    url: string;
   };
 }
 
@@ -39,6 +40,7 @@ const Content = ({ data }: IProps) => {
   const [price, setPrice] = useState(data ? data.price : "");
   const [rating, setRating] = useState(data ? data.rating : 0);
   const [distance, setDistance] = useState(data ? data.distance : 0);
+  const [url, setUrl] = useState("#");
 
   useEffect(() => {
     setName(data.name);
@@ -48,6 +50,7 @@ const Content = ({ data }: IProps) => {
     setPrice(data.price);
     setRating(data.rating);
     setDistance(data.distance);
+    setUrl(data.url);
   }, [data]);
 
   return (
@@ -61,8 +64,8 @@ const Content = ({ data }: IProps) => {
         <TravelTimes distance={distance} />
       </StyledWrapper>
       <StyledWrapper>
-        <MoreInfo />
-        <Directions />
+        <MoreInfo url={url} />
+        <Directions name={name} />
       </StyledWrapper>
     </StyledContent>
   );
