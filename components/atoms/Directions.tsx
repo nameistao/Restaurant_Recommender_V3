@@ -6,6 +6,7 @@ const StyledDirections = styled.div`
   height: 100%;
   background: #243447;
   border-radius: 15px;
+  text-align: center;
 `;
 
 const Directions = () => {

@@ -5,10 +5,13 @@ const StyledDetails = styled.div`
   width: 100%;
   background: #243447;
   border-radius: 15px;
+  padding: 15px;
 `;
 
 const StyledLine = styled.div`
-  height: 20%;
+  height: 25%;
+  text-align: center;
+  font-size: 20px;
 `;
 
 interface IProps {
