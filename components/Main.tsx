@@ -20,7 +20,15 @@ const StyledContentWrapper = styled.div`
 `;
 
 const Main = () => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState({
+    name: "",
+    is_closed: true,
+    display_phone: "",
+    categories: [],
+    price: "",
+    rating: 0,
+    distance: 0,
+  });
 
   return (
     <StyledMain>

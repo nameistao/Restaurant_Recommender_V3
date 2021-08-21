@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Provider } from "react-redux";
 import Main from "components/Main";
 
 export default function Home() {
