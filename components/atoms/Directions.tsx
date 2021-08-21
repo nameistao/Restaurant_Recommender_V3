@@ -9,7 +9,7 @@ const StyledDirections = styled.div`
 `;
 
 const Directions = () => {
-  return <StyledDirections>hey</StyledDirections>;
+  return <StyledDirections>Directions</StyledDirections>;
 };
 
 export default Directions;

@@ -8,7 +8,7 @@ const StyledMoreInfo = styled.div`
 `;
 
 const MoreInfo = () => {
-  return <StyledMoreInfo>hey</StyledMoreInfo>;
+  return <StyledMoreInfo>More Info</StyledMoreInfo>;
 };
 
 export default MoreInfo;
