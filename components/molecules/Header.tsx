@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import styled, { keyframes } from "styled-components";
 
@@ -66,6 +66,10 @@ interface IProps {
 
 const Header = ({ setData, curData }: IProps) => {
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    searchHandler();
+  }, []);
 
   const searchHandler = async () => {
     setLoading(true);
