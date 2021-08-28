@@ -14,7 +14,8 @@ const StyledSlides = styled.div`
 
 const StyledImage = styled.img`
   object-fit: contain;
-  width: 90%;
+  max-width: 90%;
+  width: fit-content;
   height: fit-content;
   max-height: 90%;
   margin-top: auto;
