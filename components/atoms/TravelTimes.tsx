@@ -1,23 +1,37 @@
 import styled from "styled-components";
+import Walk from "components/icons/Walk";
+import Bike from "components/icons/Bike";
+import Car from "components/icons/Car";
 
-const StyledWalk = styled.div`
+const StyledWalkBox = styled.div`
   width: calc(100% / 3 - 5vw / 3);
   background: #243447;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
 `;
 
-const StyledBike = styled.div`
+const StyledBikeBox = styled.div`
   width: calc(100% / 3 - 5vw / 3);
   background: #243447;
   border-radius: 15px;
   margin-left: 2.5vw;
+  display: flex;
+  align-items: center;
 `;
 
-const StyledCar = styled.div`
+const StyledCarBox = styled.div`
   width: calc(100% / 3 - 5vw / 3);
   background: #243447;
   border-radius: 15px;
   margin-left: 2.5vw;
+  display: flex;
+  align-items: center;
+`;
+
+const StyledTime = styled.div`
+  font-size: 40px;
+  width: 50%;
 `;
 
 interface IProps {
@@ -27,11 +41,20 @@ interface IProps {
 const TravelTimes = ({ distance }: IProps) => {
   return (
     <>
-      <StyledWalk>
-        walk {Math.max(1, Math.round((distance / 1000) * 12))}
-      </StyledWalk>
-      <StyledBike>bike {Math.max(1, Math.round(distance / 200))}</StyledBike>
-      <StyledCar>car {Math.max(1, Math.round(distance / 400))}</StyledCar>
+      <StyledWalkBox>
+        <Walk height="70%" width="auto" />
+        <StyledTime>
+          {Math.max(1, Math.round((distance / 1000) * 12))}
+        </StyledTime>
+      </StyledWalkBox>
+      <StyledBikeBox>
+        <Bike height="70%" width="auto" />
+        <StyledTime>{Math.max(1, Math.round(distance / 200))}</StyledTime>
+      </StyledBikeBox>
+      <StyledCarBox>
+        <Car height="70%" width="auto" />
+        <StyledTime>{Math.max(1, Math.round(distance / 400))}</StyledTime>
+      </StyledCarBox>
     </>
   );
 };
