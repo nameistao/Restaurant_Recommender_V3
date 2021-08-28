@@ -29,6 +29,7 @@ const Main = () => {
     rating: 0,
     distance: 0,
     url: "#",
+    image_url: "",
   });
 
   return (
@@ -36,7 +37,7 @@ const Main = () => {
       <Header setData={setData} />
       <StyledContentWrapper>
         <Content data={data} />
-        <Slides />
+        <Slides imageUrl={data["image_url"]} />
       </StyledContentWrapper>
     </StyledMain>
   );

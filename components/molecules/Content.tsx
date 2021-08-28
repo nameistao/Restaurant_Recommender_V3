@@ -29,6 +29,7 @@ interface IProps {
     rating: number;
     distance: number;
     url: string;
+    image_url: string;
   };
 }
 
@@ -41,6 +42,7 @@ const Content = ({ data }: IProps) => {
   const [rating, setRating] = useState(data ? data.rating : 0);
   const [distance, setDistance] = useState(data ? data.distance : 0);
   const [url, setUrl] = useState("#");
+  const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     setName(data.name);
@@ -51,6 +53,7 @@ const Content = ({ data }: IProps) => {
     setRating(data.rating);
     setDistance(data.distance);
     setUrl(data.url);
+    setImageUrl(data.image_url);
   }, [data]);
 
   return (
