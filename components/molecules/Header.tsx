@@ -45,9 +45,10 @@ const StyledSearchButton = styled.button`
 
 interface IProps {
   setData: Function;
+  curData: any;
 }
 
-const Header = ({ setData }: IProps) => {
+const Header = ({ setData, curData }: IProps) => {
   const searchHandler = async () => {
     let lat;
     let long;
@@ -66,9 +67,15 @@ const Header = ({ setData }: IProps) => {
 
         response.data.data.business;
 
-        const select = response.data
+        let select = response.data
           ? Math.floor(Math.random() * response.data.data.businesses.length)
           : 0;
+
+        while (curData.name === response.data.data.businesses[select].name) {
+          select = response.data
+            ? Math.floor(Math.random() * response.data.data.businesses.length)
+            : 0;
+        }
 
         setData(response.data.data.businesses[select]);
         console.log(response.data.data.businesses[select]);
