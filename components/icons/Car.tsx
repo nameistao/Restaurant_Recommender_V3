@@ -11,7 +11,7 @@ function SvgComponent(props: IProps) {
       data-icon="car"
       className="prefix__svg-inline--fa prefix__fa-car prefix__fa-w-16"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
+      viewBox="0 0 640 512"
       {...props}
     >
       <path

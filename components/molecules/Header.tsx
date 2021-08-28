@@ -26,10 +26,13 @@ const StyledTitleWrapper = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-  font-size 35px;
+  font-size: 40px;
   font-weight: bold;
   color: #ffffff;
   width: 100%;
+  @media (max-width: 500px) {
+    font-size: 23px;
+  }
 `;
 
 const StyledSearchButton = styled.button`
