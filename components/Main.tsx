@@ -34,7 +34,7 @@ const Main = () => {
 
   return (
     <StyledMain>
-      <Header setData={setData} />
+      <Header setData={setData} curData={data} />
       <StyledContentWrapper>
         <Content data={data} />
         <Slides imageUrl={data["image_url"]} />
