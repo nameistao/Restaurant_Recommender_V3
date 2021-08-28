@@ -1,7 +1,9 @@
+import { useState } from "react";
 import axios from "axios";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-import ServeFood from "components/icons/ServeFood";
+import Dice from "components/icons/Dice";
+import Notch from "components/icons/Notch";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -43,13 +45,30 @@ const StyledSearchButton = styled.button`
   }
 `;
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const StyledNotch = styled(Notch)`
+  animation: ${rotate} 2s linear infinite;
+`;
+
 interface IProps {
   setData: Function;
   curData: any;
 }
 
 const Header = ({ setData, curData }: IProps) => {
+  const [loading, setLoading] = useState(false);
+
   const searchHandler = async () => {
+    setLoading(true);
     let lat;
     let long;
 
@@ -79,6 +98,7 @@ const Header = ({ setData, curData }: IProps) => {
 
         setData(response.data.data.businesses[select]);
         console.log(response.data.data.businesses[select]);
+        setLoading(false);
       });
     } else {
       alert("Geolocation is not supported by this browser.");
@@ -93,7 +113,11 @@ const Header = ({ setData, curData }: IProps) => {
       </StyledTitleWrapper>
 
       <StyledSearchButton onClick={searchHandler}>
-        <ServeFood height={50} width={50} fill={"#ffffff"} />
+        {loading ? (
+          <StyledNotch height="80%" width="auto" fill={"#ffffff"} />
+        ) : (
+          <Dice height="80%" width="auto" fill={"#ffffff"} />
+        )}
       </StyledSearchButton>
     </StyledHeader>
   );
