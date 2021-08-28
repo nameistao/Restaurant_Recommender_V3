@@ -17,6 +17,9 @@ const StyledMoreInfo = styled.button`
     background: #c51f5d;
     cursor: pointer;
   }
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `;
 
 interface IProps {

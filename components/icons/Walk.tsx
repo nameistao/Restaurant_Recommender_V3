@@ -11,7 +11,7 @@ function SvgComponent(props: IProps) {
       data-icon="walking"
       className="prefix__svg-inline--fa prefix__fa-walking prefix__fa-w-10"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 320 512"
+      viewBox="0 0 640 512"
       {...props}
     >
       <path
