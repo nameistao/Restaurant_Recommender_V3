@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 
 const StyledAnchor = styled.a`

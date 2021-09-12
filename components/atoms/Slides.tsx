@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const StyledSlides = styled.div`
   width: calc(42.5% - 2.5vw);
@@ -23,18 +23,37 @@ const StyledImage = styled.img`
   border-radius: 15px;
 `;
 
+const Pulse = keyframes`
+0% { opacity: 100%}
+100% { opacity: 0% }
+`;
+
+const StyledLoadingBox = styled.div`
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  background: darkgrey;
+  border-radius: 15px;
+  animation: ${Pulse} 1s linear infinite alternate;
+`;
+
 interface IProps {
   imageUrl: string;
+  isLoading: boolean;
 }
 
-const Slides = ({ imageUrl }: IProps) => {
+const Slides = ({ imageUrl, isLoading }: IProps) => {
   const [imageLink, setImageLink] = useState(imageUrl);
 
   useEffect(() => {
     setImageLink(imageUrl);
   }, [imageUrl]);
 
-  return (
+  return isLoading ? (
+    <StyledSlides>
+      <StyledLoadingBox />
+    </StyledSlides>
+  ) : (
     <StyledSlides>
       {imageUrl && <StyledImage src={imageUrl} alt="alt" />}
     </StyledSlides>

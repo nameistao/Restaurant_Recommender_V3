@@ -32,12 +32,14 @@ const Main = () => {
     image_url: "",
   });
 
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <StyledMain>
-      <Header setData={setData} curData={data} />
+      <Header setData={setData} curData={data} setIsLoading={setIsLoading} />
       <StyledContentWrapper>
-        <Content data={data} />
-        <Slides imageUrl={data["image_url"]} />
+        <Content data={data} isLoading={isLoading} />
+        <Slides imageUrl={data["image_url"]} isLoading={isLoading} />
       </StyledContentWrapper>
     </StyledMain>
   );

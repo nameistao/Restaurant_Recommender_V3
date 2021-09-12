@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Star from "components/icons/Star";
 
 const StyledRating = styled.div`
@@ -16,12 +16,31 @@ const StyledStar = styled(Star)`
   margin-right: 1.25%;
 `;
 
+const Pulse = keyframes`
+0% { opacity: 100%}
+100% { opacity: 0% }
+`;
+
+const StyledLoadingBox = styled.div`
+  height: 70%;
+  width: 80%;
+  background: darkgrey;
+  margin: auto;
+  border-radius: 15px;
+  animation: ${Pulse} 1s linear infinite alternate;
+`;
+
 interface IProps {
   rating: number;
+  isLoading: boolean;
 }
 
-const Rating = ({ rating }: IProps) => {
-  return (
+const Rating = ({ rating, isLoading }: IProps) => {
+  return isLoading ? (
+    <StyledRating>
+      <StyledLoadingBox />
+    </StyledRating>
+  ) : (
     <StyledRating>
       {rating >= 1 &&
         Array(Math.floor(rating)).fill(

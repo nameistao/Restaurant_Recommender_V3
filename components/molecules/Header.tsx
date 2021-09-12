@@ -65,9 +65,10 @@ const StyledNotch = styled(Notch)`
 interface IProps {
   setData: Function;
   curData: any;
+  setIsLoading: Function;
 }
 
-const Header = ({ setData, curData }: IProps) => {
+const Header = ({ setData, curData, setIsLoading }: IProps) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -76,6 +77,7 @@ const Header = ({ setData, curData }: IProps) => {
 
   const searchHandler = async () => {
     setLoading(true);
+    setIsLoading(true);
     let lat;
     let long;
 
@@ -106,6 +108,7 @@ const Header = ({ setData, curData }: IProps) => {
         setData(response.data.data.businesses[select]);
         console.log(response.data.data.businesses[select]);
         setLoading(false);
+        setIsLoading(false);
       });
     } else {
       alert("Geolocation is not supported by this browser.");
