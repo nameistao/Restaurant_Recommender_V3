@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Walk from "components/icons/Walk";
 import Bike from "components/icons/Bike";
 import Car from "components/icons/Car";
@@ -34,12 +34,39 @@ const StyledTime = styled.div`
   width: 50%;
 `;
 
+const Pulse = keyframes`
+0% { opacity: 100%}
+100% { opacity: 0% }
+`;
+
+const StyledTravelContent = styled.div`
+  height: 70%;
+  width: 80%;
+  background: darkgrey;
+  margin: auto;
+  border-radius: 15px;
+  animation: ${Pulse} 1s linear infinite alternate;
+`;
+
 interface IProps {
   distance: number;
+  isLoading: boolean;
 }
 
-const TravelTimes = ({ distance }: IProps) => {
-  return (
+const TravelTimes = ({ distance, isLoading }: IProps) => {
+  return isLoading ? (
+    <>
+      <StyledWalkBox>
+        <StyledTravelContent />
+      </StyledWalkBox>
+      <StyledBikeBox>
+        <StyledTravelContent />
+      </StyledBikeBox>
+      <StyledCarBox>
+        <StyledTravelContent />
+      </StyledCarBox>
+    </>
+  ) : (
     <>
       <StyledWalkBox>
         <Walk height="70%" width="auto" />

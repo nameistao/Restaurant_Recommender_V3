@@ -31,9 +31,10 @@ interface IProps {
     url: string;
     image_url: string;
   };
+  isLoading: boolean;
 }
 
-const Content = ({ data }: IProps) => {
+const Content = ({ data, isLoading }: IProps) => {
   const [name, setName] = useState(data ? data.name : "");
   const [status, setStatus] = useState(data ? data["is_closed"] : true);
   const [category, setCategory] = useState(data ? data.categories : []);
@@ -58,13 +59,19 @@ const Content = ({ data }: IProps) => {
 
   return (
     <StyledContent>
-      <Details name={name} status={status} category={category} phone={phone} />
+      <Details
+        name={name}
+        status={status}
+        category={category}
+        phone={phone}
+        isLoading={isLoading}
+      />
       <StyledWrapper>
-        <Price price={price} />
-        <Rating rating={rating} />
+        <Price price={price} isLoading={isLoading} />
+        <Rating rating={rating} isLoading={isLoading} />
       </StyledWrapper>
       <StyledWrapper>
-        <TravelTimes distance={distance} />
+        <TravelTimes distance={distance} isLoading={isLoading} />
       </StyledWrapper>
       <StyledWrapper>
         <MoreInfo url={url} />
