@@ -33,10 +33,6 @@ const StyledTitle = styled.h1`
   @media (max-width: 500px) {
     font-size: 23px;
   }
-
-  :hover {
-    content: "whatever it is you want to add";
-  }
 `;
 
 const StyledSearchButton = styled.button`
