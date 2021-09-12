@@ -6,7 +6,7 @@ A web app that recommends nearby restaurants based on user location, built with 
 
 ## Project Context
 
-This was a personal projec built during my free time. The main project goal was to solidify my understanding of some languages, frameworks, best practices, and tools I have been exposed to so far through self-taught courses.
+This was a personal project built during my free time. The purpose is to help those who have difficulty picking a restaurant. The main project goal was to solidify my understanding of some languages, frameworks, best practices, and tools I have been exposed to so far through self-taught courses.
 
 ## Reflection
 
