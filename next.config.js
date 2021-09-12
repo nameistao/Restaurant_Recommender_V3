@@ -1,3 +1,5 @@
+const withPWA = require("next-pwa");
+
 const securityHeaders = [
   {
     key: "X-DNS-Prefetch-Control",
@@ -25,7 +27,10 @@ const securityHeaders = [
   },
 ];
 
-module.exports = {
+module.exports = withPWA({
+  pwa: {
+    dest: "public",
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
@@ -40,4 +45,4 @@ module.exports = {
       },
     ];
   },
-};
+});
