@@ -33,6 +33,10 @@ const StyledTitle = styled.h1`
   @media (max-width: 500px) {
     font-size: 23px;
   }
+
+  :hover {
+    content: "whatever it is you want to add";
+  }
 `;
 
 const StyledSearchButton = styled.button`
@@ -62,6 +66,10 @@ const StyledNotch = styled(Notch)`
   animation: ${rotate} 2s linear infinite;
 `;
 
+const StyledAnchor = styled.a`
+  width: 100%;
+`;
+
 interface IProps {
   setData: Function;
   curData: any;
@@ -70,6 +78,7 @@ interface IProps {
 
 const Header = ({ setData, curData, setIsLoading }: IProps) => {
   const [loading, setLoading] = useState(false);
+  const [hoverHeader, setHoverHeader] = useState(false);
 
   useEffect(() => {
     searchHandler();
@@ -116,10 +125,30 @@ const Header = ({ setData, curData, setIsLoading }: IProps) => {
     }
   };
 
+  const hoverHandler = () => {
+    setHoverHeader(true);
+  };
+
+  const unhoverHandler = () => {
+    setHoverHeader(false);
+  };
+
   return (
     <StyledHeader>
-      <StyledTitleWrapper>
-        <StyledTitle>Restaurant Recommender</StyledTitle>
+      <StyledTitleWrapper
+        onMouseEnter={hoverHandler}
+        onMouseLeave={unhoverHandler}
+      >
+        {hoverHeader ? (
+          <StyledAnchor
+            href={"https://github.com/nameistao/Restaurant_Recommender_V3"}
+            target="_blank"
+          >
+            <StyledTitle>Go To GitHub</StyledTitle>
+          </StyledAnchor>
+        ) : (
+          <StyledTitle>Restaurant Recommender</StyledTitle>
+        )}
       </StyledTitleWrapper>
 
       <StyledSearchButton onClick={searchHandler}>
