@@ -3,12 +3,6 @@
   "short_name": "Restaurant Recommender",
   "icons": [
     {
-      "src": "/public/favicon.ico",
-      "sizes": "48x48",
-      "type": "image/ico",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/public/icon.png",
       "sizes": "512x512",
       "type": "image/png",
