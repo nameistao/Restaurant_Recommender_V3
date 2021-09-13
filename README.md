@@ -19,6 +19,8 @@ This was a personal project built during my free time. The purpose is to help th
 
 #### What I Learned/Improved Upon:
   - Skeleton Loading
+  - Creating Test Suites
+  - Creating Progressive Web App
   - Deploying to Vercel
   - GraphQL
   - Using React with TypeScript
