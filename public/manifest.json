@@ -7,6 +7,12 @@
       "sizes": "48x48",
       "type": "image/ico",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/public/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "theme_color": "#FFFFFF",
