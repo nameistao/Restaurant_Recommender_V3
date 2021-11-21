@@ -32,7 +32,6 @@ export default class extends Document {
           <link rel="shortcut icon" href="/favicon.ico" />
           <style>{`
             html, body, #__next {
-              height: 100%;
             }
             #__next {
               margin: 0 auto;
